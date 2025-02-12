@@ -8,6 +8,9 @@ import { userCurrent } from "./redux/userSlice";
 import PrivateRoute from "./Routes/PrivateRouter";
 import Login from "./components/Login";
 import { getreservation } from "./redux/reservationSlice";
+import NavBarr from "./components/NavBarr";
+import Home from "./components/Home";
+import Footer from "./components/Footer";
 
 function App() {
   const isAuth = localStorage.getItem("token");
@@ -18,7 +21,7 @@ function App() {
   });
   return (
     <div className="App">
-      Home
+      <NavBarr/>
       <Routes>
         <Route exact path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
@@ -26,6 +29,8 @@ function App() {
           <Route path="/profil" element={<Profil />} />
         </Route>{" "}
       </Routes>
+      <Home/>
+      <Footer/>
     </div>
   );
 }
