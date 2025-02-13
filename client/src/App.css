@@ -1,47 +1,181 @@
-body {
-  background: #eee !important;
+#logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 180px;
 }
+/* importing font */
+@import url('https://fonts.cdnfonts.com/css/billboard-college');
 
-.wrapper {
-  margin-top: 80px;
-  margin-bottom: 80px;
-}
 
-.form-signin {
-  max-width: 380px;
-  padding: 15px 35px 45px;
-  margin: 0 auto;
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
- 
-  .checkbox {
-    font-weight: normal;
-  }
-
-  .form-control {
-    position: relative;
-    font-size: 16px;
-    height: auto;
-    padding: 10px;
-  }
-
-  input[type="text"] {
-    margin-bottom: -1px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-
-  input[type="password"] {
-    margin-bottom: 20px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-  }
-.header{
-  width: 100%;
-  height: 150px;
-  background-color: blue;
+ul { list-style: none; }
+.nav-bar {
   display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 180px;
+  background-color: black;
+  align-items: center;
+}
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  left: 120px;
+  position: relative;
+}
+.nav-list a {
+  text-decoration: none;
+  padding: 0 30px;
+  font-family: 'Billboard College', sans-serif;
+  font-size: xx-large;
+  color: white;
+}
+.user-related {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.user-related ul {
+  width: 12%;
+  height: 20px;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+}
+.user-related a {
+  
+  padding: 15px;
+}
+.user-related svg {
+  width: 40px;
+  height: 40px;
+  fill: white;
+}
+
+/* ###################################################################################################################### */
+/* styling home page */
+#cover-0 {
+  position: relative;
+  width: 100%;
+  background-image: url();
+  background-color: rgba(0, 0, 0, 0.6); /* Adjust the RGB values and alpha for transparency */
+  z-index: -1; /* Keep it behind the content */
+}
+.explore-service {
+  background-color: black;
+
+}
+.band-0 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: grey;
+}
+
+.animated-bar {
+  width: 25%;
   justify-content: center;
   align-items: center;
+}
+
+.animated-bar::before {
+  content: '';
+  position: absolute;
+  background: grey;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: scaleX(0); /* Initially hidden */
+  transform-origin: left; /* Start expanding from the left */
+  transition: transform 0.7s linear; /* Ensures smooth, constant-speed expansion */
+}
+
+.animated-bar:hover::before {
+  transform: scaleX(1); /* Expands fully to the right */
+}
+
+
+
+/* ###################################################################################################################### */
+/* styling footer */
+#ft-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 40px 10px;
+  background-color: black;
+}
+#ft-main a {
+  height: 20px;
+}
+#s-logo {
+  width: 200px;
+  height: 200px;
+}
+
+
+/* new home */
+
+.section1{
+  height: 550px;
+background-repeat: no-repeat;
+  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2F-RhO8LF5e88%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=d2d09d485e0e459958cba0af0b0db17413ac201530b5018b2b09129a69e334ec&ipo=images");
+  /* background-color: rgba(0, 0, 0, 0.8);
+ 
+  -webkit-filter: grayscale(100%); */
+  
+  background-size: cover;
+  background-position: center;
+
+}
+
+.section1::before {
+  content: "";
+  position: absolute;
+  top: 180px;
+  left: 0;
+  width: 100%;
+  height: 550px;
+  background: #000000d4; }
+ 
+
+.description h3{
+color: #d70007;
+    text-transform: capitalize;
+}
+
+.section2{
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  top: 180px;
+  left: 0px;
+  background-color:blue !important;
+
+}
+
+
+.onetab input{
+  width:250px;
+
+}
+
+
+
+
+
+.test{
+  height: auto;
+  margin: 140px 50px;
+
+}
+.test img {
+  position: relative;
+  top: 90px;
+  left: 40px;
+  height: 250px;
+  width: 250px;
 }
