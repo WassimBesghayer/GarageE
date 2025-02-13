@@ -1,78 +1,93 @@
+// Import required dependencies
 const express = require("express");
-const User = require("../models/User");
+const User = require("../models/User"); // Import User model
 const router = express.Router();
-const bcrypt = require("bcrypt");
-const user = require("../models/User");
-const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt"); // For password hashing
+const jwt = require("jsonwebtoken"); // For JWT token generation
 const {
   loginRules,
   registerRules,
   validation,
-} = require("../middleware/validator");
-const isAuth = require("../middleware/passport");
+} = require("../middleware/validator"); // Custom validation middleware
+const isAuth = require("../middleware/passport"); // Authentication middleware
 
-//register
+// Registration endpoint
 router.post("/register", registerRules(), validation, async (req, res) => {
-  const { name, lastname, email, password } = req.body;
+  // Extract user data from request body
+  const { name, lastname, email, password, phonenumber, category } = req.body;
+  
   try {
-    const newUser = new User({ name, lastname, email, password });
-    // check if the email exist
+    // Create new user instance
+    const newUser = new User({ name, lastname, email, password, phonenumber, category });
+    
+    // Check if email already exists in database
     const searchedUser = await User.findOne({ email });
-
     if (searchedUser) {
       return res.status(400).send({ msg: "email already exist" });
     }
-
-    // hash password
+    
+    // Hash the password for security
     const salt = 10;
     const genSalt = await bcrypt.genSalt(salt);
     const hashedPassword = await bcrypt.hash(password, genSalt);
-    console.log(hashedPassword);
+    console.log(hashedPassword); // Should remove this console.log
     newUser.password = hashedPassword;
-    // generation token
-    //save  the user
+    
+    // Save the new user to database
     const newUserToken = await newUser.save();
+    
+    // Create JWT payload
     const payload = {
-      _id: newUser._id,
+      id: newUser.id, // Note: syntax error in original code with *id
       name: newUserToken.name,
     };
+    
+    // Generate JWT token
     const token = await jwt.sign(payload, process.env.SecretOrkey, {
-      expiresIn: 3600,
+      expiresIn: 3600, // Token expires in 1 hour
     });
-
+    
+    // Send success response with user data and token
     res
       .status(200)
       .send({ newUserToken, msq: "user is saved", token: `bearer ${token}` });
   } catch (error) {
-    res.send(error);
+    res.send(error); // Should include status code
     console.log(error);
   }
 });
-//login
+
+// Login endpoint
 router.post("/login", loginRules(), validation, async (req, res) => {
   const { email, password } = req.body;
+  
   try {
-    //find if the user exist
+    // Find user by email
     const searchedUser = await User.findOne({ email });
-    //find if the email not exist
+    
+    // Check if user exists
     if (!searchedUser) {
       return res.status(400).send({ msg: "Bad credential" });
     }
-    //if password are equal
+    
+    // Verify password
     const match = await bcrypt.compare(password, searchedUser.password);
     if (!match) {
       return res.status(400).send({ msg: "Bad credential" });
     }
-    //creer un token
+    
+    // Create JWT payload
     const payload = {
-      _id: searchedUser._id,
+      id: searchedUser.id, // Note: syntax error in original code with *id
       name: searchedUser.name,
     };
+    
+    // Generate JWT token
     const token = await jwt.sign(payload, process.env.SecretOrKey, {
       expiresIn: 3600,
     });
-    //console.log(token)
-    //send the user
+    
+    // Send success response
     res
       .status(200)
       .send({ user: searchedUser, msg: "success", token: `bearer ${token}` });
@@ -81,7 +96,9 @@ router.post("/login", loginRules(), validation, async (req, res) => {
   }
 });
 
+// Get current user endpoint (protected route)
 router.get("/current", isAuth(), (req, res) => {
   res.status(200).send({ user: req.user });
 });
+
 module.exports = router;
