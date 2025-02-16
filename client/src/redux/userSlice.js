@@ -14,7 +14,7 @@ export const userRegister = createAsyncThunk("user/register", async (user) => {
 });
 
 // Create async thunk for user login
-export const userlogin = createAsyncThunk("user/logi", async (user) => { // Typo in "logi"
+export const userlogin = createAsyncThunk("user/login", async (user) => { // Typo in "login"
  try {
    // Make POST request to login user
    let response = await axios.post("http://localhost:5000/user/login", user);
