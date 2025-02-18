@@ -15,6 +15,9 @@ app.use(express.json());
 app.use(cors());
 app.use("/user",require("./routes/user"));
 app.use("/reservation",require("./routes/reservation"));
+app.use("/shop",require("./routes/shop"));
+app.use("/orders",require("./routes/orders"));
+app.use("/dashboard",require("./routes/dashboard"));
 
 //server
 const PORT=process.env.PORT;
