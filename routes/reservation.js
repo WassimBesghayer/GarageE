@@ -4,7 +4,7 @@ const Reservation = require("../models/reservation"); // Import Reservation mode
 const reservationRouter = express.Router(); // Create Express router instance
 
 // POST endpoint to add a new reservation
-reservationRouter.post("/add", async (req, res) => {
+reservationRouter.post("/booking", async (req, res) => {
   try {
     // Create new Reservation instance from request body
     let newreservation = new Reservation(req.body);
