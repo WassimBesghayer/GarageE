@@ -1,6 +1,6 @@
 import React from 'react'
 import BookReservation from './Reservation'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 // import ReactDOM from 'react-dom'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -11,13 +11,15 @@ function NavBarr() {
   
   return (
     <div className='nav-bar'>
-        <img id='logo' src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.freepik.com%2Fpremium-vector%2Fauto-repair-garage-logo-automotive-industry_160069-63.jpg%3Fw%3D2000&f=1&nofb=1&ipt=e559a84fd6d530597592c192608d8d1d8485320330acdea977fb362857f9f44d&ipo=images'/>
-            <ul className='nav-list'>
-              <li><a href='' target='_blank'>Services</a></li>
-              <Link to="/add" style={{textDecoration:"none", color:"white"}}> <li>Book a Reservation</li></Link> 
-              <li><a href='' target='_blank'>Shop</a></li>
-              <li><a href='' target='_blank'>Blog</a></li>
+        <a href='/' target='_blank'><img id='logo' src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.freepik.com%2Fpremium-vector%2Fauto-repair-garage-logo-automotive-industry_160069-63.jpg%3Fw%3D2000&f=1&nofb=1&ipt=e559a84fd6d530597592c192608d8d1d8485320330acdea977fb362857f9f44d&ipo=images'/></a>
+          
+          <ul className='nav-list'>
+              {/* <Link to='/services'> */} <a href='/services' target='_blank'>Services</a> {/* </Link> */}
+              {/* <Link to="/booking" style={{textDecoration:"none", color:"white"}}> */} <a href='/booking' target='_blank'>Book a Reservation</a>
+              <li><a href='/shop' target='_blank'>Shop</a></li>
+              <li><a href='/blog' target='_blank'>Blog</a></li>
             </ul>
+
             <div className='user-related'>
               <ul>
                 {/* <li><a href=''><FontAwesomeIcon icon="fa-regular fa-user" /></a></li> */}
