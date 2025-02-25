@@ -6,8 +6,11 @@ function Footer() {
       <main id='ft-main'>
         <section id='ft-left-section'>
           <img id='s-logo' src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.freepik.com%2Fpremium-vector%2Fauto-repair-garage-logo-automotive-industry_160069-63.jpg%3Fw%3D2000&f=1&nofb=1&ipt=e559a84fd6d530597592c192608d8d1d8485320330acdea977fb362857f9f44d&ipo=images'/>
+          <div id='shop-adress'>
           <h3>Our adress :</h3>
           <h5>999, Av. Salaheddine El Ayoubi, Zrig Eddakhlania - Gabes</h5>
+          </div>
+          <div id='work-hour'>
           <h3>Working Hours</h3>
           <table>
             <tbody>
@@ -16,6 +19,7 @@ function Footer() {
               <tr><td>Sunday</td>&nbsp;<td>Weekly rest</td></tr>
             </tbody>
           </table>
+          </div>
           
         </section>
 
