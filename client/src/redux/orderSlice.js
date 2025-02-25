@@ -6,7 +6,7 @@ import axios from "axios";
 export const getorder = createAsyncThunk("order/get", async () => {
  try {
    // Make GET request to fetch all orders
-   let result = await axios.get("http://localhost:5000/order/");
+   let result = await axios.get("http://localhost:5000/user/order/");
    return result;
  } catch (error) {
    console.log(error); // Should use proper error handling
@@ -14,10 +14,10 @@ export const getorder = createAsyncThunk("order/get", async () => {
 });
 
 // Create async thunk for adding a new order
-export const addorder = createAsyncThunk("order/add", async (neworder) => {
+export const addorder = createAsyncThunk("/user/order/add", async (neworder) => {
  try {
    // Make POST request to add new order
-   let result = await axios.post("http://localhost:5000/order/add", neworder);
+   let result = await axios.post("http://localhost:5000/user/order/add", neworder);
    return result;
  } catch (error) {
    console.log(error);
@@ -25,10 +25,10 @@ export const addorder = createAsyncThunk("order/add", async (neworder) => {
 });
 
 // Create async thunk for deleting a order
-export const deleteorder = createAsyncThunk("order/delete", async (id) => {
+export const deleteorder = createAsyncThunk("/user/order/delete", async (id) => {
  try {
    // Make DELETE request with order ID
-   let result = await axios.delete(`http://localhost:5000/order/${id}`);
+   let result = await axios.delete(`http://localhost:5000/user/order/${id}`);
    return result;
  } catch (error) {
    console.log(error);
@@ -37,11 +37,11 @@ export const deleteorder = createAsyncThunk("order/delete", async (id) => {
 
 // Create async thunk for editing a order
 export const editorder = createAsyncThunk(
- "order/edit",
+ "/user/order/edit",
  async ({ id, edited }) => {
    try {
      // Make PUT request with ID and updated data
-     let result = await axios.put(`http://localhost:5000/order/${id}`, edited);
+     let result = await axios.put(`http://localhost:5000/user/order/${id}`, edited);
      return result;
    } catch (error) {
      console.log(error);

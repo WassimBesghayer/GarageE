@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 // Create async thunk for user registration
-export const userRegister = createAsyncThunk("user/register", async (user) => {
+export const userRegister = createAsyncThunk("/register", async (user) => {
  try {
    // Make POST request to register user
    let response = await axios.post("http://localhost:5000/user/register", user);
@@ -14,7 +14,7 @@ export const userRegister = createAsyncThunk("user/register", async (user) => {
 });
 
 // Create async thunk for user login
-export const userlogin = createAsyncThunk("user/login", async (user) => { // Typo in "login"
+export const userlogin = createAsyncThunk("/login", async (user) => { // Typo in "login"
  try {
    // Make POST request to login user
    let response = await axios.post("http://localhost:5000/user/login", user);
@@ -33,7 +33,7 @@ export const userCurrent = createAsyncThunk("user/current", async () => {
        Authorization: localStorage.getItem("token"),
      },
    });
-   return await response; // Unnecessary await
+   return await response;
  } catch (error) {
    console.log(error);
  }
@@ -53,7 +53,7 @@ export const userSlice = createSlice({
    // Synchronous logout action
    logout: (state, action) => {
      state.user = null;
-     localStorage.removeItem("token");
+     localStorage.removeItem("token"); //explain this ?!
    },
  },
  // Handle async action states

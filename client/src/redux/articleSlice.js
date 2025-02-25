@@ -98,13 +98,16 @@ export const articleSlice = createSlice({
     deleteArticle: (state, action) => {
       state.ArticleList=state.ArticleList.filter((el)=>el.title!== action.payload.title)
     },
-    editArticle: (state, action) => {
-      let i=state.ArticleList.findIndex((el)=>el.title===action.payload.title);
-      state.ArticleList[i]=action.payload.edited;
-    },
+    // editArticle: (state, action) => {
+    //   let i=state.ArticleList.findIndex((el)=>el.title===action.payload.title);
+    //   state.ArticleList[i]=action.payload.edited;
+    // },
     addArticle: (state, action) => {
       state.ArticleList.push(action.payload)
     }
+    // readMore: (state, action) => {
+    //     state.ArticleList.
+    // }
   }
 })
 

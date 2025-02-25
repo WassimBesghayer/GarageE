@@ -3,10 +3,10 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 // Create async thunk for getting all reservations
-export const getreservation = createAsyncThunk("reservation/get", async () => {
+export const getreservation = createAsyncThunk("/user/reservation/get", async () => {
  try {
    // Make GET request to fetch all reservations
-   let result = await axios.get("http://localhost:5000/reservation/");
+   let result = await axios.get("http://localhost:5000/user/reservation/");
    return result;
  } catch (error) {
    console.log(error); // Should use proper error handling
@@ -14,10 +14,10 @@ export const getreservation = createAsyncThunk("reservation/get", async () => {
 });
 
 // Create async thunk for adding a new reservation
-export const addreservation = createAsyncThunk("reservation/add", async (newreservation) => {
+export const addreservation = createAsyncThunk("/user/reservation/add", async (newreservation) => {
  try {
    // Make POST request to add new reservation
-   let result = await axios.post("http://localhost:5000/reservation/add", newreservation);
+   let result = await axios.post("http://localhost:5000/user/reservation/add", newreservation);
    return result;
  } catch (error) {
    console.log(error);
@@ -25,10 +25,10 @@ export const addreservation = createAsyncThunk("reservation/add", async (newrese
 });
 
 // Create async thunk for deleting a reservation
-export const deletereservation = createAsyncThunk("reservation/delete", async (id) => {
+export const deletereservation = createAsyncThunk("/user/reservation/delete", async (id) => {
  try {
    // Make DELETE request with reservation ID
-   let result = await axios.delete(`http://localhost:5000/reservation/${id}`);
+   let result = await axios.delete(`http://localhost:5000/user/reservation/${id}`);
    return result;
  } catch (error) {
    console.log(error);
@@ -36,12 +36,11 @@ export const deletereservation = createAsyncThunk("reservation/delete", async (i
 });
 
 // Create async thunk for editing a reservation
-export const editreservation = createAsyncThunk(
- "reservation/edit",
+export const editreservation = createAsyncThunk("/user/reservation/edit",
  async ({ id, edited }) => {
    try {
      // Make PUT request with ID and updated data
-     let result = await axios.put(`http://localhost:5000/reservation/${id}`, edited);
+     let result = await axios.put(`http://localhost:5000/user/reservation/${id}`, edited);
      return result;
    } catch (error) {
      console.log(error);
