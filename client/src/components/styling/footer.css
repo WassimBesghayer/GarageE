@@ -1,0 +1,21 @@
+#s-logo {
+    position: relative;
+    left: 100px;
+    width: 100px !important;
+    height: 100px !important;
+}
+
+footer h5, h3, a, td { color: white; }
+#ft-left-section h5 { color: white; }
+#ft-right-section td { padding: 10px; }
+#shop-adress { padding-top: 20px; }
+#work-hour { padding-top: 50px; }
+
+#ft-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 40px 10px;
+    background-color: black;
+}
+#ft-main a { height: 20px; }

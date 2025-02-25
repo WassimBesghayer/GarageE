@@ -1,0 +1,85 @@
+#logo {
+position: absolute;
+top: 0;
+left: 0;
+width: 200px;
+height: 180px;
+}
+/* importing font */
+@import url('https://fonts.cdnfonts.com/css/billboard-college');
+
+
+ul, li { list-style: none; }
+svg { fill: white; }
+.nav-bar {
+display: flex;
+justify-content: space-around;
+width: 100%;
+height: 180px;
+background-color: black;
+align-items: center;
+}
+.nav-list {
+display: flex;
+justify-content: space-between;
+left: 10px;
+position: relative;
+}
+.nav-list a {
+text-decoration: none;
+padding: 0 30px;
+font-family: 'Billboard College', sans-serif;
+font-size: xx-large;
+color: white;
+}
+
+
+#search-panel {
+position: relative;
+right: 50px;
+top: 1px;
+text-decoration: none;
+/* color: white; */
+/* height: 100%; */
+width: 200px;
+}
+#search-panel-list {
+display: flex;
+
+}
+#search-panel input {
+width: 180px;
+height: 40px;
+}
+#scope {
+position: relative;
+top: 7px;
+right: -10px;
+width: 40px;
+height: 40px;
+}
+#favorites {
+width: 30px !important;
+height: 40px !important;
+}
+
+
+.user-related {
+position: relative;
+right: 40px;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+}
+.user-related ul {
+width: 5px;
+height: 20px;
+color: white;
+display: flex;
+justify-content: space-around;
+}
+.user-related a { padding: 5px; }
+.user-related svg {
+width: 40px;
+height: 40px;
+}
