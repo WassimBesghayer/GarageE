@@ -1,50 +1,48 @@
-// Import required dependencies
-const express = require("express");
-const User = require("../models/User"); // Import User model
-const router = express.Router();
-const bcrypt = require("bcrypt"); // For password hashing
-const jwt = require("jsonwebtoken"); // For JWT token generation
+const express = require("express"); // Import Express.js framework to create and manage routes
+const User = require("../models/User"); // Import User model for database operations
+const router = express.Router(); // Create a new router instance to handle routes
+const bcrypt = require("bcrypt"); // Import bcrypt for password hashing and comparison
+const user = require("../models/User"); // Duplicate import of User model (redundant)
+const jwt = require("jsonwebtoken"); // Import JWT for token generation and verification
 const {
   loginRules,
   registerRules,
   validation,
-} = require("../middleware/validator"); // Custom validation middleware
-const isAuth = require("../middleware/passport"); // Authentication middleware
+} = require("../middleware/validator"); // Import validation middleware for registration and login
+const isAuth = require("../middleware/passport"); // Import authentication middleware
 
-// Registration endpoint
+// REGISTER ROUTE
 router.post("/register", registerRules(), validation, async (req, res) => {
-  // Extract user data from request body
-  const { name, lastname, email, password, phonenumber, category } = req.body;
-  
+  // Define POST route for user registration with validation middleware
+  const { name, lastname, email, password } = req.body; // Extract user data from request body using destructuring
   try {
-    // Create new user instance
-    const newUser = new User({ name, lastname, email, password, phonenumber, category });
+    const newUser = new User({ name, lastname, email, password }); // Create a new User instance with submitted data
     
-    // Check if email already exists in database
+    // Check if the email already exists in the database
     const searchedUser = await User.findOne({ email });
     if (searchedUser) {
-      return res.status(400).send({ msg: "email already exist" });
+      return res.status(400).send({ msg: "email already exist" }); // Return error if email already exists
     }
     
-    // Hash the password for security
-    const salt = 10;
-    const genSalt = await bcrypt.genSalt(salt);
-    const hashedPassword = await bcrypt.hash(password, genSalt);
-    console.log(hashedPassword); // Should remove this console.log
-    newUser.password = hashedPassword;
+    // Hash password for security
+    const salt = 10; // Define salt rounds for bcrypt (higher = more secure but slower)
+    const genSalt = await bcrypt.genSalt(salt); // Generate a salt
+    const hashedPassword = await bcrypt.hash(password, genSalt); // Hash the password with the generated salt
+    console.log(hashedPassword); // Log the hashed password (security concern - should be removed in production)
+    newUser.password = hashedPassword; // Replace plain password with hashed password
     
-    // Save the new user to database
+    // Save the new user to the database
     const newUserToken = await newUser.save();
     
-    // Create JWT payload
+    // Create JWT payload with user ID and name
     const payload = {
-      id: newUser.id, // Note: syntax error in original code with *id
+      _id: newUser._id, // Note: There's a typo here with *id - should be _id
       name: newUserToken.name,
     };
     
-    // Generate JWT token
+    // Generate JWT token with payload, secret key, and expiration
     const token = await jwt.sign(payload, process.env.SecretOrkey, {
-      expiresIn: 3600, // Token expires in 1 hour
+      expiresIn: 3600, // Token expires in 1 hour (3600 seconds)
     });
     
     // Send success response with user data and token
@@ -52,53 +50,54 @@ router.post("/register", registerRules(), validation, async (req, res) => {
       .status(200)
       .send({ newUserToken, msq: "user is saved", token: `bearer ${token}` });
   } catch (error) {
-    res.send(error); // Should include status code
-    console.log(error);
+    res.send(error); // Send error response (Note: should include status code like 500)
+    console.log(error); // Log error to console for debugging
   }
 });
 
-// Login endpoint
+// LOGIN ROUTE
 router.post("/login", loginRules(), validation, async (req, res) => {
-  const { email, password } = req.body;
-  
+  // Define POST route for user login with validation middleware
+  const { email, password } = req.body; // Extract login credentials from request body
   try {
     // Find user by email
     const searchedUser = await User.findOne({ email });
     
-    // Check if user exists
+    // If user not found, return bad credentials error
     if (!searchedUser) {
       return res.status(400).send({ msg: "Bad credential" });
     }
     
-    // Verify password
+    // Compare submitted password with stored hashed password
     const match = await bcrypt.compare(password, searchedUser.password);
     if (!match) {
-      return res.status(400).send({ msg: "Bad credential" });
+      return res.status(400).send({ msg: "Bad credential" }); // Return same error for wrong password (security best practice)
     }
     
-    // Create JWT payload
+    // Create JWT payload with user ID and name
     const payload = {
-      id: searchedUser.id, // Note: syntax error in original code with *id
+      _id: searchedUser._id, // Note: There's a typo here with *id - should be _id
       name: searchedUser.name,
     };
     
-    // Generate JWT token
-    const token = await jwt.sign(payload, process.env.SecretOrKey, {
-      expiresIn: 3600,
+    // Generate JWT token with payload, secret key, and expiration
+    const token = await jwt.sign(payload, process.env.SecretOrKey, { // Note: This key name is different from registration route (SecretOrKey vs SecretOrkey)
+      expiresIn: 3600, // Token expires in 1 hour (3600 seconds)
     });
     
-    // Send success response
+    // Send success response with user data and token
     res
       .status(200)
       .send({ user: searchedUser, msg: "success", token: `bearer ${token}` });
   } catch (error) {
-    res.status(500).send({ msg: "Can not get the user" });
+    res.status(500).send({ msg: "Can not get the user" }); // Send server error response
   }
 });
 
-// Get current user endpoint (protected route)
+// GET CURRENT USER ROUTE
 router.get("/current", isAuth(), (req, res) => {
-  res.status(200).send({ user: req.user });
+  // Define GET route to retrieve current authenticated user, protected by isAuth middleware
+  res.status(200).send({ user: req.user }); // Send user data from request (populated by passport middleware)
 });
 
-module.exports = router;
+module.exports = router; // Export the router to be used in the main application
