@@ -1,4 +1,5 @@
 import React from 'react'
+import './styling/footer.css'
 
 function Footer() {
   return (
@@ -104,14 +105,19 @@ function Footer() {
             <td><a href="tel:+216 90 123 456">Call us</a></td></tr>
             </tbody>
           </table>
+
+     
         </section>
+          <div style={{display:"flex", flexDirection:"column"}}>
+            <hr style={{width:"50%", color:"white", border:" 1px solid white"}}/>
+          </div>
+            <p style={{color:"red"}}>This web site is developed by Wassim BESGHAYER</p>
+            <a href="mailto:wassim.besghayer@outlook.com" target="_blank" title="my mail adress">feel free to contact me 😊</a>
+            <a href="https://www.linkedin.com/in/wassim-besghayer/" target="_blank" title="my Linkedin profile">Contact me on LinkedIn</a>
       </main>
-      {/* <hr>
-      This web site is developed by Wassim BESGHAYER &nbsp; 
-	    <a href="mailto:wassim.besghayer@outlook.com" target="_blank" title="my mail adress">feel free to contact me 😊</a>
+      <hr/>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<a href="https://www.linkedin.com/in/wassim-besghayer/" target="_blank" title="my Linkedin profile">Contact me on LinkedIn</a>
-</hr> */}
+
     </div>
   )
 }
