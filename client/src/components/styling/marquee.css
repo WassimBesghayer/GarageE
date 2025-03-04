@@ -1,0 +1,12 @@
+@import url('https://fonts.cdnfonts.com/css/billboard-college');
+.marquee-section { 
+    margin: 10px  5px;
+    height: 200px;
+}
+.marquee-elem { 
+    padding: 10px 40px;
+    height: 100px;
+    width: 200px;
+}
+.partners { display: flex; }
+#title { font-family: 'Billboard College' !important; }
