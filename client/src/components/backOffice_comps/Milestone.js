@@ -1,13 +1,13 @@
 import React from 'react'
-import '../styling/procedure.css'
+import '../styling/milestone.css'
 
-export default function Procedure() {
+export default function Milestone() {
 
   return (
-    <div className='Core-Procedure'>
-        <h3>Understand Our Procedure</h3>
+    <div className='Core-Milestone'>
+        <h3>Understand Our Milestone</h3>
         <h1>Acquaint Yourself with Our Process</h1>
-        <div className='container-procedure'>
+        <div className='container-Milestone'>
             <div className='container-chrono'>
                 
             </div>
@@ -37,7 +37,7 @@ export default function Procedure() {
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla nostrum dicta rerum ipsum! Velit.</p>
                 </section>
             </div>
-            <img id='photo-procedure' src='https://karimotors.wpengine.com/wp-content/uploads/2024/08/Process-Block-03.jpg'/>
+            <img id='photo-Milestone' src='https://karimotors.wpengine.com/wp-content/uploads/2024/08/Process-Block-03.jpg'/>
         </div>
     </div>
   )
