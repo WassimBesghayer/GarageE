@@ -1,0 +1,13 @@
+.container-procedure {
+    display: flex;
+    justify-content: center;
+}
+.container-text {
+    display: flex;
+    flex-direction: column;
+}
+#photo-procedure {
+    width: 700px;
+    height: 500px;
+    padding: 40px;
+}
