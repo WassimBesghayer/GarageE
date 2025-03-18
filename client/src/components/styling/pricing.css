@@ -1,0 +1,88 @@
+.Core-Pricing {
+    background-color: black;
+    color: white;
+    padding: 60px 50px;
+}
+td { padding: 5px 20px; }
+svg {
+    fill: white;
+    width: 50px;
+    height: 50px;
+}
+.prx-choice {
+    display: flex;
+    justify-content: center;
+}
+.pricing-cards {
+    display: flex;
+    justify-content: space-around;
+}
+.prx-card { 
+    width: 20%;
+    height: 645px;
+    padding: 10px 40px;
+    border-radius: 10px;
+    background-color: red;
+    overflow: hidden;
+}
+.prx-card h4, h3, h1 {
+    display: flex;
+    justify-content: center;
+}
+
+#standard {
+    background-image: url(https://img.freepik.com/premium-photo/closeup-business-woman-with-counting-money-female-hands-with-us-dollar-currency-cash-money_73110-1346.jpg);
+    background-size: cover;
+    background-repeat: no-repeat ;
+    background-position: -240px; /* positioning the photo on the horizontal axis */
+}
+#standard:before {
+    content: '';
+    position: fixed;
+    background-color: rgba(100, 100, 107, 0.6);
+    opacity: 0.8;
+    z-index: -1;
+}
+/* #premium {overflow: hidden;} */
+button {
+    width: 100px;
+    height: 50px;
+    margin: 30px 0 30px 0;
+}
+#btn_casual{margin-top: 80px;}
+.tab-promo {
+    background-color: rgb(35, 105, 7);
+    width: 180px;
+    height: 30px;
+    position: absolute;
+    top: 275px;
+    right: 65px;
+    transform: rotate(45deg);
+    justify-items: center;
+    
+}
+.tab-recom {
+    background-color: white;
+    color: red;
+    width: 150px;
+    height: 30px;
+    position: absolute;
+    top: 314px;
+    right: 540px;
+    transform: rotate(90deg);
+    border-radius: 0 0 35px 0;
+}
+.tab-recom p ,.tab-promo p {
+    position: relative;
+    top: 3px;
+    left: 10px;
+    margin: 0;
+}
+.prx-switch {
+    position: relative;
+    top: -2px;
+    left: -6px;
+    
+    margin: 0 0 30px 30px;
+
+}
