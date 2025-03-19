@@ -9,13 +9,14 @@ import PrivateRoute from "./Routes/PrivateRouter";
 import Login from "./components/Login";
 import { getreservation } from "./redux/reservationSlice";
 import NavBarr from "./components/NavBarr";
-import Home from "./components/Home";
 import Footer from "./components/Footer";
-import New_Home from "./components/New_Home";
+import Home from "./components/Home";
 import BookReservation from "./components/Reservation";
-import Services from "./components/Services";
 import Shop from "./components/Shop";
-import Test from "./components/Test";
+import Orders from "./components/Orders";
+import Blog from "./components/Blog";
+import Favorites from "./components/Favorites";
+// import Dashboard from "./components/Dashboard";
 
 
 
@@ -27,6 +28,7 @@ function App() {
     dispatch(userCurrent());
     dispatch(getreservation());
   },[ping])
+  
   return (
     <div className="App">
       <NavBarr/>
@@ -34,12 +36,15 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         {/* <Route element={<PrivateRoute />}> */}
-        <Route path="/profil" element={<Profil />} />
-        <Route path="/" element={<New_Home />} />
-        <Route path="/add" element={<BookReservation ping={ping} setping={setping} />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/test" element={<Test />} />
+        <Route path="/profil" element={<Profil ping={ping} setping={setping} />} />
+        <Route path="/favorites" element={<Favorites ping={ping} setping={setping} />} />
+        <Route path="/user/booking" element={<BookReservation ping={ping} setping={setping} />} />
+        <Route path="/shop" element={<Shop ping={ping} setping={setping}/>} />  
+        <Route path="/user/order" element={<Orders ping={ping} setping={setping}/>} />  
+        <Route path="/blog" element={<Blog />} />  
+        <Route path="/" element={<Home />} />
+        
+        {/* <Route path="/dashboard" element={<Dashboard />} /> */}
       </Routes>
 
       <Footer/>
