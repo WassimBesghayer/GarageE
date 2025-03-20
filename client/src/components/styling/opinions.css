@@ -1,0 +1,72 @@
+@import url('https://fonts.cdnfonts.com/css/billboard-college');
+/* @property --startColor {
+    syntax: "<color>";
+    initial-value: #EADEDB;
+    inherits: false;
+    }
+
+@property --endColor {
+    syntax: "<color>";
+    initial-value: #BC70A4;
+    inherits: false;
+    }
+.ex1 {
+    background: linear-gradient(var(--startColor), var(--endColor));
+    animation: gradient 3s linear infinite;
+    }
+    
+@keyframes gradient {
+    0%,
+    100% {
+        --startColor: #EADEDB;
+        --endColor: #BC70A4;
+    }
+    50% {
+        --startColor: #BC70A4;
+        --endColor: #BFD641;
+    }
+} */
+
+
+.Core-opinion h1 {
+    font-family: 'Billboard College';
+}
+.card-opinion {
+    background-color: aqua;
+    width: 30rem;
+    height: 50rem;
+    margin: 7rem 3rem 10rem ;
+    padding: 2rem;
+
+    border: 5px solid red;
+    border-top-right-radius: 50px;
+
+    position: relative;
+    animation-name: moving-top;
+    animation-duration: 4s;
+}
+
+.card-opinion:hover {
+    @keyframes moving-top {
+        0%   { left:0px; top:0px;}
+        100% { left:0px; top:0px;}
+    }
+}
+.card-opinion h3, h6 {
+    font-size: large;
+    color: black;
+}
+.card-opinion img {
+    position: relative;
+    bottom: -5rem;
+    left: 5rem;
+
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+}
+.rating-stars {
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem;
+}
