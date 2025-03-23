@@ -1,0 +1,71 @@
+.Core-band_1 {
+    display: flex;
+    justify-content: space-around;
+    margin: 5rem 8rem;
+    background-color: aqua;
+}
+
+.Core-band_1 svg {
+    width: 8rem;
+    height: 8rem;
+    margin: 2rem;
+    fill: white;
+}
+
+.elem {
+    display: flex;
+    align-items: center;
+    margin: 2rem;
+    border: solid;
+}
+.elem:hover .icon-container{
+    background-color: black;
+}
+/* @keyframes sliding-1 {
+    {   background-color: red;
+        animation-timing-function: ease-in-out;
+    }
+} */
+/* .elem:hover article {
+    transition: red 0.7s linear;
+} */
+
+.icon-container {
+    background-color: red;
+}
+#zb{
+    position: relative;
+    top: 10rem;
+}
+/* Creating a pseudo-element for the filling animation */
+article::before {
+    content: '';
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 120px;
+    background-color: red;
+    transform: scaleX(0); /* Initially hidden */
+    transform-origin: left; /* Fill from left to right */
+    transition: transform 0.7s linear;
+    z-index: -1; /* Behind the text */
+}
+.elem:hover article::before {
+    transform: scaleX(1); /* Expand to full width on hover */
+  }
+.Core-band_1 article {
+    width: 17rem;
+    height: 120px;
+    z-index: 1; /* Ensure text stays above the filling background */
+    animation-name: sliding-1;
+}
+
+.Core-band_1 p {
+    display: flex;
+    justify-content: center;
+}
+#mo8t {
+    padding: 0 30px;
+    text-align: center;
+}
