@@ -1,0 +1,70 @@
+.band-0 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.212);
+}
+#second {height: 110px;}
+#fourth {height: 110px}
+.animated-bar {
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+.animated-bar:nth-of-type(even) {background-color: #2a2626d4;}
+  /* #car-on-lift { fill: white;} */
+.animated-bar::before {
+    content: '';
+    position: absolute;
+    background: rgb(26, 25, 25);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform: scaleX(0); /* Initially hidden */
+    transform-origin: left; /* Start expanding from the left */
+    transition: transform 0.7s linear; /* Ensures smooth, constant-speed expansion */
+}
+.animated-bar:hover::before {
+    transform: scaleX(1); /* Expands fully to the right */
+}
+.nbr {
+    padding: 0 20px 0 0;
+    font-family: 'Billboard College', sans-serif;
+    font-size: 7rem;
+    color: black;
+}
+.text-band-0 h2, h5{
+    font-family: 'Billboard College', sans-serif;
+    font-size: x-large;
+    color: black;
+}
+.band-0 h5 {
+    display: flex;
+    justify-content: center;
+}
+#mo8t-0 {
+    margin-top: 0;
+    padding-bottom: 10px;
+}
+
+#car-on-lift {
+    width: 70px;
+    height: 70px;
+}
+#car-wash {
+    width: 70px;
+    height: 70px;
+}
+#smiley {
+    width: 40px;
+    height:40px;
+    fill: black;
+}
+#car-oil {
+    width: 70px;
+    height: 70px;
+}
