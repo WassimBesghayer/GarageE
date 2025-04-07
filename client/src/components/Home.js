@@ -42,7 +42,7 @@ function Home() {
     </section>
     
         <Band_0/>
-        <video autoPlay="" loop="" muted="" playsInline="">
+        <video autoPlay="" loop="" muted="" playsInline="" controls>
           <source src='/assets/Commercial Ads.mp4' type='video/mp4'/>
           Your browser doesn't support the video tag !
         </video> 
