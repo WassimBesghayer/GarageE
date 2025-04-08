@@ -1,0 +1,28 @@
+.blog-container {
+    width: 100%;
+}
+.carteArticle {
+    width: 90%;
+    height: 33rem;
+    margin: 5rem 7rem;
+    padding: 5rem;
+    display: flex;
+    justify-content: space-evenly;
+    border: 3px solid red;
+    border-radius: 30px;
+    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.5);
+}
+.text-sec {
+    margin: 2rem;
+}
+.text-sec h5 {
+    margin: 0;
+    padding: 0 10px 25px;
+}
+.text-sec p {
+    height: 14rem;
+    overflow: hidden;
+}
+.text-sec a {
+    color: green;
+}
