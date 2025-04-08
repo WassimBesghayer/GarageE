@@ -8,9 +8,12 @@ function ArticleCard({article}) {
   return (
     <div className='carteArticle'>
         <img src={article.imageUrl} style={{minWidth:"250px", maxWidth:"250px", minHeight:"250px", maxHeight:"250px"}}/>
-        <h5>{article.title}</h5>
-        {/* <p>{article.content}</p> */}
-        {/* <button onClick={()=>dispatch(deleteArticle({name:article.name}))}>Read more →</button> */}
+        <section className='text-sec'>
+          <h5>{article.title}</h5>
+          <p>{article.content}</p>
+          <a href='#'>Read more ...</a>
+        </section>
+        {/* <button onClick={()=>dispatch(editArticle({name:article.name}))}>Read more →</button> */} 
     </div>
   )
 }
