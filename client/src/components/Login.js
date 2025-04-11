@@ -20,7 +20,7 @@ function Login() {
 
  return (
    // Main container with 50% width
-   <div style={{width:"50%"}}> 
+   <div style={{width:"20%"}}> 
      <div className="wrapper">
        {/* Login form with preventDefault to stop default submission */}
        <form onSubmit={(e) => e.preventDefault()} className="form-signin">
@@ -64,11 +64,8 @@ function Login() {
          {/* Login button */}
          <button
            className="btn btn-lg btn-primary btn-block"
-           onClick={() => {
-             setTimeout(() => {
-               dispatch(userlogin(login)); // Dispatch login action
-               navigate("/"); // Navigate to home page
-             }, 86400); // 24-hour delay - likely a mistake
+           onClick={() => {dispatch(userlogin(login)); // Dispatch login action
+            navigate("/"); // Navigate to user's profil page
            }}
          >
            login
@@ -76,7 +73,7 @@ function Login() {
 
          {/* Registration link */}
          <h5>
-           You already have an account <Link to="/register">Register now</Link>{" "}
+           If you don't have an account <Link to="/register">Register now</Link>{" "}
          </h5>
        </form>
      </div>
