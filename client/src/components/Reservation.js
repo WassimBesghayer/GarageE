@@ -1,6 +1,6 @@
 // Import necessary dependencies
 import React, { useState } from 'react' // Import React and useState hook
-import "./Book.css" // Import component-specific styles
+import "./styling/Book.css" // Import component-specific styles
 import { useDispatch, useSelector } from 'react-redux' // Import Redux hooks for state management
 import { addreservation } from '../redux/reservationSlice' // Import reservation action
 
