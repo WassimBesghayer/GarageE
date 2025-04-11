@@ -1,15 +1,9 @@
-* {
-    box-sizing: border-box;
-}
-html {
-    font-size: 14px;
-}
-body {
+.Core-Timeline {
     background: #f6f9fc;
     font-family: "Open Sans", sans-serif;
     color: #525f7f;
 }
-h1, h2 {
+.Core-Timeline h1, h2 {
     font-family: 'Billboard College', sans-serif;
     /* font-size: xx-large; */
     margin: 5%;
