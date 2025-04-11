@@ -95,7 +95,7 @@ function Register() {
             className="btn btn-lg btn-primary btn-block" // Bootstrap classes for styling
             onClick={() => {
               dispatch(userRegister(register)); // Dispatch registration action to Redux
-              navigate("/"); // Navigate to home page after registration
+              navigate("/"); // Navigate to user'sprofil page after registration
             }}
           >
             Register
@@ -103,7 +103,7 @@ function Register() {
 
           {/* Login link for existing users */}
           <h5>
-            u already have account <Link to="/login">sign in </Link>{" "}
+            If you already have account <Link to="/login">sign in </Link>{" "}
           </h5>
         </form>
       </div>
