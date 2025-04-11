@@ -8,7 +8,7 @@ function Blog() {
    const articles=useSelector((state)=>state.article.ArticleList)
   
    return (
-   <div>
+   <div className='mymodal'>
      <div className='blog-container'>
         {articles.map((el)=><ArticleCard article={el}/>)}
      </div>
