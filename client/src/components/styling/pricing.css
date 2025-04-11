@@ -3,8 +3,8 @@
     color: white;
     padding: 60px 50px;
 }
-td { padding: 5px 20px; }
-svg {
+.prx-card td { padding: 18px 20px; }
+.prx-card svg {
     fill: white;
     width: 50px;
     height: 50px;
@@ -16,10 +16,11 @@ svg {
 .pricing-cards {
     display: flex;
     justify-content: space-around;
+    margin-top: 80px;
 }
 .prx-card { 
-    width: 20%;
-    height: 645px;
+    width: 25%;
+    height: 74rem;
     padding: 10px 40px;
     border-radius: 10px;
     background-color: red;
@@ -31,7 +32,7 @@ svg {
 }
 
 #standard {
-    background-image: url(https://img.freepik.com/premium-photo/closeup-business-woman-with-counting-money-female-hands-with-us-dollar-currency-cash-money_73110-1346.jpg);
+    background-image: url("https://www.ribaostore.com/cdn/shop/articles/how_to_count_money_fast_5371x.jpg?v=1686553732");
     background-size: cover;
     background-repeat: no-repeat ;
     background-position: -240px; /* positioning the photo on the horizontal axis */
@@ -54,9 +55,9 @@ button {
     background-color: rgb(35, 105, 7);
     width: 180px;
     height: 30px;
-    position: absolute;
-    top: 275px;
-    right: 65px;
+    position: relative;
+    top: -73.6rem;
+    right: -17.7rem;
     transform: rotate(45deg);
     justify-items: center;
     
@@ -64,11 +65,11 @@ button {
 .tab-recom {
     background-color: white;
     color: red;
-    width: 150px;
+    width: 120px;
     height: 30px;
-    position: absolute;
-    top: 314px;
-    right: 540px;
+    position: relative;
+    top: -69.5rem;
+    right: -78rem;
     transform: rotate(90deg);
     border-radius: 0 0 35px 0;
 }
