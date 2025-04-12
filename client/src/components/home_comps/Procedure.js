@@ -3,6 +3,7 @@ import '../styling/procedure.css'
 
 function Procedure() {
   return (
+   
     <div className='Core-Timeline'>
         <>
     <h1>Understand Our Procedure</h1>
