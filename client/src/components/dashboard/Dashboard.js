@@ -1,5 +1,9 @@
-<>
-  <meta charSet="utf-8" />
+import React from 'react'
+
+function Dashboard() {
+  return (
+    <div>
+      <meta charSet="utf-8" />
   <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
   <meta
     name="viewport"
@@ -7,7 +11,7 @@
   />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <title>Dashboard - SB Admin</title>
+  <title>Dashboard - Admin</title>
   <link
     href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
     rel="stylesheet"
@@ -16,7 +20,7 @@
   <nav className="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     {/* Navbar Brand*/}
     <a className="navbar-brand ps-3" href="index.html">
-      Start Bootstrap
+      KPI in a glance
     </a>
     {/* Sidebar Toggle*/}
     <button
@@ -816,7 +820,7 @@
       <footer className="py-4 bg-light mt-auto">
         <div className="container-fluid px-4">
           <div className="d-flex align-items-center justify-content-between small">
-            <div className="text-muted">Copyright © Your Website 2023</div>
+            <div className="text-muted">Copyright © GarageE 2025</div>
             <div>
               <a href="#">Privacy Policy</a>·
               <a href="#">Terms &amp; Conditions</a>
@@ -826,4 +830,10 @@
       </footer>
     </div>
   </div>
-</>
+
+
+    </div>
+  )
+}
+
+export default Dashboard
