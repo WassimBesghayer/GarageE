@@ -1,5 +1,10 @@
-<>
-  <meta charSet="utf-8" />
+import React from 'react'
+
+function Charts() {
+  return (
+    <div className="Chart-Core">
+      
+      <meta charSet="utf-8" />
   <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
   <meta
     name="viewport"
@@ -7,12 +12,12 @@
   />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <title>Charts - SB Admin</title>
+  <title>Charts - Admin</title>
   <link href="css/styles.css" rel="stylesheet" />
   <nav className="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     {/* Navbar Brand*/}
     <a className="navbar-brand ps-3" href="index.html">
-      Start Bootstrap
+      KPI in a glance
     </a>
     {/* Sidebar Toggle*/}
     <button
@@ -312,4 +317,10 @@
       </footer>
     </div>
   </div>
-</>
+
+      
+    </div>
+  )
+}
+
+export default Charts
