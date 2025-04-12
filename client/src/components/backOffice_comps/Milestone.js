@@ -7,7 +7,7 @@ export default function Milestone() {
     <div className='Core-Milestone'>
         <h3>Understand Our Milestone</h3>
         <h1>Acquaint Yourself with Our Process</h1>
-        <div className='container-Milestone'>
+        <div className='container-milestone'>
             <div className='container-chrono'>
                 
             </div>
@@ -37,7 +37,7 @@ export default function Milestone() {
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla nostrum dicta rerum ipsum! Velit.</p>
                 </section>
             </div>
-            <img id='photo-Milestone' src='https://karimotors.wpengine.com/wp-content/uploads/2024/08/Process-Block-03.jpg'/>
+            <img id='photo-milestone' src='https://karimotors.wpengine.com/wp-content/uploads/2024/08/Process-Block-03.jpg'/>
         </div>
     </div>
   )
