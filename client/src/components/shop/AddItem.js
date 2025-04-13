@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import { useDispatch } from 'react-redux';
-import { addItem } from '../redux/itemslice';
+
 
 
 function AddItem() {
@@ -56,9 +56,9 @@ function AddItem() {
           <Button variant="secondary" onClick={handleClose} style={{backgroundColor: 'red', border: 'none'}}>
             Close
           </Button>
-          <Button variant="primary" onClick={()=>{dispatch(addItem(newitem));}}>
+          {/* <Button variant="primary" onClick={()=>{dispatch(addItem(newitem));}}>
             Save Changes
-          </Button>
+          </Button> */}
         </Modal.Footer>
       </Modal>
     </>
